@@ -50,10 +50,10 @@ import java.util.TimeZone;
                 timezoneParam = timezoneParam.replace(" ", "+");
             }
 
-//            boolean validTimeZone = timezoneParam !=null || !timezoneParam.isEmpty() || Set.of(TimeZone.getAvailableIDs()).contains(timezoneParam);
-//            if (validTimeZone){
-//                resp.addCookie(new Cookie("lastTimezone", timezoneParam));
-//            }
+            boolean validTimeZone = timezoneParam !=null || !timezoneParam.isEmpty() || Set.of(TimeZone.getAvailableIDs()).contains(timezoneParam);
+            if (validTimeZone){
+                resp.addCookie(new Cookie("lastTimezone", timezoneParam));
+            }
             resp.addCookie(new Cookie("lastTimezone", timezoneParam));
             Cookie[] cookies = req.getCookies();
             if ((timezoneParam == null || timezoneParam.isEmpty()) && cookies != null) {
